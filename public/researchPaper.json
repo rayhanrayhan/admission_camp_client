@@ -1,0 +1,56 @@
+[
+    {
+        "_id": "1",
+        "img": "https://i.ibb.co/DGNFjyh/01.jpg",
+        "date": "2023-07-23",
+        "name": "Research Paper 1",
+        "description": "Liquid-Solid Phase Separation Control of Polymer/Nano-Carbon Interaction and Blending for Composite Manufacturing",
+        "author": "John Doe",
+        "reports": "https://floksociety.org/docs/Espanol/1/1.1.pdf"
+    },
+    {
+        "_id": "2",
+        "img": "https://i.ibb.co/cCWGRCn/download-2.jpg",
+        "date": "2022-06-23",
+        "name": "Research Paper 2",
+        "description": "Examining the advancements in nanotechnology and their applications in various industries, including medicine, electronics, and energy.",
+        "author": "Jane Smith",
+        "reports": "https://matheo.uliege.be/bitstream/2268.2/1811/1/s111541Lobet2016.pdf"
+    },
+    {
+        "_id": "3",
+        "img": "https://i.ibb.co/6JJMsv8/fsdfds.jpg",
+        "date": "2023-07-21",
+        "name": "Research Paper 3",
+        "description": "A study on the effects of social media usage on mental health and well-being, and the role of digital well-being interventions.",
+        "author": "Michael Johnson",
+        "reports": "https://www.elgaronline.com/display/edcoll/9781784717759/9781784717759.00020.xml"
+    },
+    {
+        "_id": "4",
+        "img": "https://i.ibb.co/5hMwQ0R/dfffs.jpg",
+        "date": "2023-07-20",
+        "name": "Research Paper 4",
+        "description": "Investigating the potential of blockchain technology in enhancing data security and privacy in the finance sector.",
+        "author": "Emily Brown",
+        "reports": "https://libres.uncg.edu/ir/asu/f/Lemke_Karen_2019_Dissertation.pdf"
+    },
+    {
+        "_id": "5",
+        "img": "https://i.ibb.co/p2ZYm7Y/dasdad.jpg",
+        "date": "2023-07-19",
+        "name": "Research Paper 5",
+        "description": "An in-depth analysis of the factors influencing consumer behavior in e-commerce and the implications for marketing strategies.",
+        "author": "David Lee",
+        "reports": "http://riut.utfpr.edu.br/jspui/bitstream/1/4753/1/propostamodelotransferenciatecnologiasmartcities.pdf"
+    },
+    {
+        "_id": "6",
+        "img": "https://i.ibb.co/GnJ6wWd/rdrr.jpg",
+        "date": "2023-07-18",
+        "name": "Research Paper 6",
+        "description": "A review of the latest developments in autonomous vehicles technology and the challenges ahead for their widespread adoption.",
+        "author": "Salman Wison",
+        "reports": "http://riut.utfpr.edu.br/jspui/bitstream/1/4753/1/propostamodelotransferenciatecnologiasmartcities.pdf"
+    }
+]
