@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from './../../../assets/react.png';
 import SearchBar from './SearchBar';
+import { AuthContext } from '../../../Providors/AuthProvider';
 
 const Navber = () => {
-    const [user, setUser] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
     const [open, setOpen] = useState(false);
 
     const [navbarOpacity, setNavbarOpacity] = useState(1);
@@ -137,10 +139,10 @@ const Navber = () => {
                         {/* user picture */}
                         <div className="relative group">
                             <button className="btn btn-ghost btn-circle">
-                                <img className="w-10 h-10 rounded-full" src={logo} alt="" />
+                                <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
                             </button>
                             <h1 className="absolute -bottom-24 bg-slate-700 px-6 py-2 rounded-lg opacity-0 invisible shadow-md right-0 group-hover:opacity-100 group-hover:visible duration-300">
-                                rayhan uddin remon
+                                {user?.displayName}
                             </h1>
                         </div>
 
@@ -148,7 +150,7 @@ const Navber = () => {
                         <ul className="text-white">
                             {user ? (
                                 <li>
-                                    <button>Log Out</button>
+                                    <button onClick={() => logOut()}>Log Out</button>
                                 </li>
                             ) : (
                                 <li>
