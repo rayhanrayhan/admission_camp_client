@@ -16,6 +16,9 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+      {
+        "no-underscore-dangle": ["error", { "allow": [_id, b_codes_id] }],
+      },
     ],
   },
 }

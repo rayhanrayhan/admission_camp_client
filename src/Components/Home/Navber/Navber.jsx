@@ -11,7 +11,7 @@ const Navber = () => {
     const handleScroll = () => {
         const scrollY = window.scrollY;
         const navbarHeight = 60;
-        const newOpacity = scrollY > navbarHeight ? 0.2 : 1;
+        const newOpacity = scrollY > navbarHeight ? 0.3 : 1;
 
 
         setNavbarOpacity(newOpacity);
@@ -36,7 +36,7 @@ const Navber = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50" style={{ backgroundColor: `rgba(42, 30, 15, ${navbarOpacity})` }}>
+        <nav className="fixed w-full z-50" style={{ backgroundColor: `rgba(15, 15, 90, ${navbarOpacity})` }}>
             <div className="flex items-center justify-between md:w-9/12 md:mx-auto mx-4">
 
                 {/* mobile */}
@@ -48,7 +48,7 @@ const Navber = () => {
                     <ion-icon name="menu"></ion-icon>
                 </div>
                 <div
-                    className={`text-gray-900 md:hidden absolute w-2/3 mt-[78px] h-screen px-6 py-2 font-medium  bg-[#a2600e] top-0 duration-300 ${open ? 'left-0' : 'right-[100%]'
+                    className={`text-gray-900 md:hidden absolute w-2/3 mt-[78px] h-screen px-6 py-2 font-medium  bg-[#0f0f5a] top-0 duration-300 ${open ? 'left-0' : 'right-[100%]'
                         }`}
                 >
                     <div className='flex mt-16 justify-center items-center gap-1'>
@@ -56,7 +56,7 @@ const Navber = () => {
                         <h5 className=" text-white  font-bold">Admission Camp</h5></div>
                     <ul className="flex flex-col justify-center text-start gap-5 py-2 text-lg ">
                         {tabLink?.map((menu, i) => (
-                            <li key={i} className="px-6  text-white hover:text-blue-600">
+                            <li key={i} className="px-6  text-white hover:text-yellow-400">
                                 <a href={menu?.link}>{menu.name}</a>
                             </li>
                         ))}
@@ -73,7 +73,7 @@ const Navber = () => {
                 <div className="md:bg-white/0 bg-white md:block hidden">
                     <ul className="flex items-center gap-1 py-2 text-lg">
                         {tabLink?.map((menu, i) => (
-                            <li key={i} className="px-6  text-white hover:text-blue-600">
+                            <li key={i} className="px-6  text-white hover:text-yellow-400">
                                 <a href={menu?.link}>{menu?.name}</a>
                             </li>
                         ))}
