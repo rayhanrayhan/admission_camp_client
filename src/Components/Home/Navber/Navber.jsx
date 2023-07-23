@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from './../../../assets/react.png';
 import SearchBar from './SearchBar';
 
@@ -28,15 +28,69 @@ const Navber = () => {
     }, []);
 
 
-    const tabLink = [
-        { name: 'Home', link: '' },
-        { name: 'College', link: '' },
-        { name: 'Admission', link: '' },
-        { name: 'My College', link: '' },
-    ];
+    const tabLink = (
+        <>
+            <li>
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "block font-medium text-yellow-400 outline-white text-lg"
+                            : "block font-medium text-lg"
+                    }
+                >
+                    Home{" "}
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/college"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "block font-medium text-yellow-400 outline-white text-lg"
+                            : "block font-medium text-lg"
+                    }
+                >
+                    College{" "}
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/admission"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "block font-medium text-yellow-400 outline-white text-lg"
+                            : "block font-medium text-lg"
+                    }
+                >
+                    Admission{" "}
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to="/mycollege"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "block font-medium text-yellow-400 outline-white text-lg"
+                            : "block font-medium text-lg"
+                    }
+                >
+                    My College{" "}
+                </NavLink>
+            </li>
+
+
+
+
+
+        </>
+    )
+
+
+
 
     return (
-        <nav className="fixed w-full z-50" style={{ backgroundColor: `rgba(15, 15, 90, ${navbarOpacity})` }}>
+        <nav className="fixed w-full text-white z-50" style={{ backgroundColor: `rgba(15, 15, 90, ${navbarOpacity})` }}>
             <div className="flex items-center justify-between md:w-9/12 md:mx-auto mx-4">
 
                 {/* mobile */}
@@ -54,12 +108,8 @@ const Navber = () => {
                     <div className='flex mt-16 justify-center items-center gap-1'>
                         <img className="w-20 " src={logo} alt="" />
                         <h5 className=" text-white  font-bold">Admission Camp</h5></div>
-                    <ul className="flex flex-col justify-center text-start gap-5 py-2 text-lg ">
-                        {tabLink?.map((menu, i) => (
-                            <li key={i} className="px-6  text-white hover:text-yellow-400">
-                                <a href={menu?.link}>{menu.name}</a>
-                            </li>
-                        ))}
+                    <ul className="flex flex-col text-white justify-center text-start gap-5 py-2 text-lg ">
+                        {tabLink}
                     </ul>
                 </div>
 
@@ -71,12 +121,8 @@ const Navber = () => {
 
                 {/* menu */}
                 <div className="md:bg-white/0 bg-white md:block hidden">
-                    <ul className="flex items-center gap-1 py-2 text-lg">
-                        {tabLink?.map((menu, i) => (
-                            <li key={i} className="px-6  text-white hover:text-yellow-400">
-                                <a href={menu?.link}>{menu?.name}</a>
-                            </li>
-                        ))}
+                    <ul className="flex items-center gap-6 py-2 text-lg">
+                        {tabLink}
                     </ul>
                 </div>
 

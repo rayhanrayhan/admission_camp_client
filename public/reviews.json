@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "date": "2023-07-18",
+        "description": "Investigating the potential of blockchain technology in enhancing data security and privacy in the finance sector.",
+        "author": "Emily Brown",
+        "img": "https://i.ibb.co/GnJ6wWd/rdrr.jpg",
+        "rating": "5"
+    },
+    {
+        "_id": 2,
+        "date": "2023-07-18",
+        "description": "An in-depth analysis of the factors influencing consumer behavior in e-commerce and the implications for marketing strategies.",
+        "author": "David Lee",
+        "img": "https://i.ibb.co/YQN97gX/Ellipse-4.jpg",
+        "rating": "4.5"
+    },
+    {
+        "_id": 3,
+        "date": "2023-07-18",
+        "description": "A review of the latest developments in autonomous vehicles technology and the challenges ahead for their widespread adoption.",
+        "author": "Salman Wison",
+        "img": "https://i.ibb.co/Vp4c0mh/Ellipse-1-1.png",
+        "rating": "3.5"
+    },
+    {
+        "_id": 4,
+        "date": "2023-07-18",
+        "description": "A study on the effects of social media usage on mental health and well-being, and the role of digital well-being interventions.",
+        "author": "Michael Johnson",
+        "img": "https://i.ibb.co/bHVNYQD/Ellipse-1-2.png",
+        "rating": "5"
+    },
+    {
+        "_id": 5,
+        "date": "2023-07-18",
+        "description": "Examining the advancements in nanotechnology and their applications in various industries, including medicine, electronics, and energy.",
+        "author": "Jane Smith",
+        "img": "https://i.ibb.co/bKsQDKh/07.jpg",
+        "rating": "4"
+    },
+    {
+        "_id": 6,
+        "date": "2023-07-18",
+        "description": "Liquid-Solid Phase Separation Control of Polymer/Nano-Carbon Interaction and Blending for Composite Manufacturing",
+        "author": "John Doe",
+        "img": "https://i.ibb.co/5L23QXH/exparts6.png",
+        "rating": "4.5"
+    }
+]

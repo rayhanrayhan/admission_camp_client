@@ -4,6 +4,7 @@ import Features from '../Features/Features';
 import Colleges from '../Colleges/Colleges';
 import CLgGallery from '../ClgGallery/CLgGallery';
 import ResearchPaper from '../ResearchPaper/ResearchPaper';
+import Review from '../Review/Review';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
             <Colleges></Colleges>
             <CLgGallery></CLgGallery>
             <ResearchPaper></ResearchPaper>
+            <Review></Review>
         </div>
     );
 };

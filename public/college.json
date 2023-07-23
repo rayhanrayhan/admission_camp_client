@@ -3,6 +3,7 @@
         "_id": "1",
         "collegeImg": "https://i.ibb.co/PjwRrBj/01.jpg",
         "college_Name": "InnovationTech Institute",
+        "ratings": "4.5",
         "admission_Process": "InnovationTech Institute seeks students who are passionate about using technology to drive innovation and positive change. Prospective students must showcase their academic excellence, creativity, and commitment to making a difference.",
         "events": [
             {
@@ -23,6 +24,7 @@
         "_id": "2",
         "collegeImg": "https://i.ibb.co/1XtW7SD/02.jpg",
         "college_Name": "Innovate University",
+        "ratings": "4",
         "admission_Process": "Innovate University seeks students who have a passion for innovation and creativity. Prospective students must showcase their academic achievements, creativity, and problem-solving skills.",
         "events": [
             {
@@ -43,6 +45,7 @@
         "_id": "3",
         "collegeImg": "https://i.ibb.co/7vR26tF/03.jpg",
         "college_Name": "Tech Innovators Institute",
+        "ratings": "5",
         "admission_Process": "Tech Innovators Institute looks for students with a strong background in technology and a track record of innovation. Prospective students must demonstrate their technical skills and showcase their innovative projects.",
         "events": [
             {
@@ -63,6 +66,7 @@
         "_id": "4",
         "collegeImg": "https://i.ibb.co/ry7j9mh/04.jpg",
         "college_Name": "TechGenius College",
+        "ratings": "4.3",
         "admission_Process": "TechGenius College seeks students with exceptional problem-solving skills and a passion for technology. Prospective students must submit their academic records, essays, and letters of recommendation.",
         "events": [
             {
@@ -83,6 +87,7 @@
         "_id": "5",
         "collegeImg": "https://i.ibb.co/5YcJmc6/05.jpg",
         "college_Name": "InnovateTech University",
+        "ratings": "4.2",
         "admission_Process": "InnovateTech University values creativity, critical thinking, and curiosity. Prospective students must demonstrate their academic excellence and a passion for driving technological innovation.",
         "events": [
             {
@@ -103,6 +108,7 @@
         "_id": "6",
         "collegeImg": "https://i.ibb.co/48pdJGR/06.jpg",
         "college_Name": "Tech Visionary Institute",
+        "ratings": "4",
         "admission_Process": "Tech Visionary Institute seeks visionary students with a strong academic background. Prospective students must submit their academic records, extracurricular achievements, and a statement of purpose.",
         "events": [
             {
@@ -123,6 +129,7 @@
         "_id": "7",
         "collegeImg": "https://i.ibb.co/mvP9XVP/07.jpg",
         "college_Name": "Tech Pioneers College",
+        "ratings": "4.5",
         "admission_Process": "Tech Pioneers College seeks students who are pioneers in their fields and have a passion for pushing the boundaries of technology. Prospective students must showcase their innovative projects and academic excellence.",
         "events": [
             {
@@ -143,6 +150,7 @@
         "_id": "8",
         "collegeImg": "https://i.ibb.co/8PwDzxM/08.jpg",
         "college_Name": "Tech Nexus University",
+        "ratings": "4.8",
         "admission_Process": "Tech Nexus University seeks students who embrace innovation and are eager to explore the intersections of technology with other disciplines. Prospective students must demonstrate academic excellence and a passion for interdisciplinary studies.",
         "events": [
             {
@@ -163,6 +171,7 @@
         "_id": "9",
         "collegeImg": "https://i.ibb.co/yYD7mCR/09.jpg",
         "college_Name": "TechXcellence Institute",
+        "ratings": "3.9",
         "admission_Process": "TechXcellence Institute looks for students with a passion for excellence and a strong commitment to making a positive impact through technology. Prospective students must showcase their academic achievements, leadership skills, and dedication to innovation.",
         "events": [
             {
@@ -183,6 +192,7 @@
         "_id": "10",
         "collegeImg": "https://i.ibb.co/mCmPh1G/10.jpg",
         "college_Name": "Tech Frontier College",
+        "ratings": "4.5",
         "admission_Process": "Tech Frontier College seeks students who are eager to explore uncharted territories in technology and contribute to groundbreaking advancements. Prospective students must demonstrate academic excellence and a forward-thinking mindset.",
         "events": [
             {
