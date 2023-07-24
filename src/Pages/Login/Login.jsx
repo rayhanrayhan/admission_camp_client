@@ -4,7 +4,7 @@ import { AuthContext } from '../../Providors/AuthProvider';
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
-    const { signIn, googleSignIn, setLoading } = useContext(AuthContext);
+    const { signIn, googleSignIn, user, setLoading, resetPasscode } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -14,35 +14,51 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [showNotification, setShowNotification] = useState(false);
 
-    const handleLogin = async (event) => {
+    const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-
-        try {
-            setLoading(true);
-            const result = await signIn(email, password);
-
-            if (result === 'google') {
-                toast.success('Logged in with Google successfully!');
-                navigate(from, { replace: true });
-            } else {
-                toast.success('Logged in successfully!');
-                navigate('/');
-            }
-
-            form.reset();
-        } catch (error) {
-            setError('Invalid email or password');
-            form.reset();
-            setLoading(false);
-        }
+        signIn(email, password)
+            .then(res => {
+                form.reset()
+                navigate(from, { replace: true })
+            })
     };
-    const handlePasswordReset = (e) => {
-        e.preventDefault();
 
-        setShowNotification(true);
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then((res) => {
+                const user = res.user;
+                navigate(from, { replace: true })
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    }
+
+    const handlePasswordReset = (e) => {
+        console.log(email)
+        resetPasscode(email)
+            .then(() => {
+                toast.success('Please Check your Email', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                })
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
+            })
+
+
+
+
+
     };
 
     return (
@@ -59,7 +75,7 @@ const Login = () => {
                             aria-label="Continue with Google"
                             role="button"
                             className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
-                            onClick={googleSignIn}
+                            onClick={handleGoogleSignIn}
                         >
                             <img
                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg"

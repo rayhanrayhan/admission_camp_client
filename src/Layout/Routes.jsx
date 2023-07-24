@@ -13,6 +13,7 @@ import AdmissionForm from "../Pages/AdmissionForm/AdmissionForm";
 import MyCollege from "../Pages/MyCollege/MyCollege";
 import PrivetRoute from "./PrivetRoute";
 import Error from "../Pages/Error/Error";
+import SearchPage from "../Pages/SearchPage/SearchPage";
 
 
 
@@ -47,6 +48,12 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path: 'searchdata/:searchtext',
+                element: <SearchPage></SearchPage>,
+                loader: () => fetch('https://admission-camp-client.vercel.app/collegeData')
+
             },
             {
                 path: 'viewDetails/:id',
