@@ -37,7 +37,7 @@ const AdmissionForm = () => {
 
 
         axios
-            .post("http://localhost:5000/mycollege", myClg)
+            .post("https://admission-camp-client.vercel.app/mycollege", myClg)
             .then((response) => {
                 console.log(response.data);
                 const notify = () => toast("Wow so easy!");

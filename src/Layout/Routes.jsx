@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
             {
                 path: 'mycollege',
                 element: <PrivetRoute><MyCollege></MyCollege></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/mycollege/${params.email}`)
+                loader: ({ params }) => fetch(`https://admission-camp-client.vercel.app/mycollege/${params.email}`)
 
             },
             {
@@ -51,12 +51,12 @@ export const router = createBrowserRouter([
             {
                 path: 'viewDetails/:id',
                 element: <PrivetRoute><TopClgViewDEtails></TopClgViewDEtails></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
+                loader: ({ params }) => fetch(`https://admission-camp-client.vercel.app/collegeData/${params.id}`)
             },
             {
                 path: 'admission/:id',
                 element: <AdmissionForm></AdmissionForm>,
-                loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
+                loader: ({ params }) => fetch(`https://admission-camp-client.vercel.app/collegeData/${params.id}`)
 
             },
         ]

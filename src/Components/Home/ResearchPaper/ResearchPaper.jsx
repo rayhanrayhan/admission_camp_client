@@ -5,7 +5,7 @@ const ResearchPaper = () => {
     const [researchPaper, setResearchPaper] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/research_paper')
+        fetch('https://admission-camp-client.vercel.app/research_paper')
             .then((res) => res.json())
             .then((data) => setResearchPaper(data));
     }, []);
