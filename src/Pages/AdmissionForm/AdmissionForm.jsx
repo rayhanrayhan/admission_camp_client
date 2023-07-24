@@ -27,13 +27,14 @@ const AdmissionForm = () => {
         // Assuming collegesData is a property of clgdata
         const myClg = {
             ...data,
-            Email: user?.email,
+            email: user?.email,
             events: clgdata.collegesData?.events,
             sports: clgdata.collegesData?.sports,
             research: clgdata.collegesData?.research,
             research_Works: clgdata.collegesData?.researchWorks,
         };
         console.log(myClg);
+
 
         axios
             .post("http://localhost:5000/mycollege", myClg)

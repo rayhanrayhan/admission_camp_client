@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providors/AuthProvider';
-
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
     const { signIn, googleSignIn, setLoading } = useContext(AuthContext);
@@ -9,33 +9,39 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showNotification, setShowNotification] = useState(false);
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        setShowNotification(true);
 
-        signIn(email, password)
-            .then((result) => {
+        try {
+            setLoading(true);
+            const result = await signIn(email, password);
+
+            if (result === 'google') {
+                toast.success('Logged in with Google successfully!');
                 navigate(from, { replace: true });
-                form.reset();
-            })
-            .catch((error) => {
-                setError('Invalid email or password');
-                form.reset();
-                setLoading(false);
-            });
-    };
+            } else {
+                toast.success('Logged in successfully!');
+                navigate('/');
+            }
 
+            form.reset();
+        } catch (error) {
+            setError('Invalid email or password');
+            form.reset();
+            setLoading(false);
+        }
+    };
     const handlePasswordReset = (e) => {
         e.preventDefault();
-        // Implement password reset logic here
-        // For demonstration purposes, I'm just showing a notification
+
         setShowNotification(true);
     };
 
@@ -144,6 +150,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

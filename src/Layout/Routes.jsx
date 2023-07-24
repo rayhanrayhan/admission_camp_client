@@ -11,6 +11,10 @@ import Register from "../Pages/Register/Register";
 import TopClgViewDEtails from "../Pages/TopClgViewDetails/TopClgViewDEtails";
 import AdmissionForm from "../Pages/AdmissionForm/AdmissionForm";
 import MyCollege from "../Pages/MyCollege/MyCollege";
+import PrivetRoute from "./PrivetRoute";
+import Error from "../Pages/Error/Error";
+
+
 
 
 export const router = createBrowserRouter([
@@ -28,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'admission',
-                element: <Admission></Admission>
+                element: <PrivetRoute><Admission></Admission></PrivetRoute>
             },
             {
                 path: 'Login',
@@ -36,7 +40,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'mycollege',
-                element: <MyCollege></MyCollege>
+                element: <PrivetRoute><MyCollege></MyCollege></PrivetRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/mycollege/${params.email}`)
+
             },
             {
                 path: 'register',
@@ -44,15 +50,23 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'viewDetails/:id',
-                element: <TopClgViewDEtails></TopClgViewDEtails>,
+                element: <PrivetRoute><TopClgViewDEtails></TopClgViewDEtails></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
             },
             {
                 path: 'admission/:id',
                 element: <AdmissionForm></AdmissionForm>,
                 loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
-            },
 
+            },
         ]
+
     },
+    {
+        path: "*",
+        element: <Error></Error>
+    }
+
+
+
 ]);

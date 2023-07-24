@@ -5,7 +5,7 @@ const ResearchPaper = () => {
     const [researchPaper, setResearchPaper] = useState([]);
 
     useEffect(() => {
-        fetch('/researchPaper.json')
+        fetch('http://localhost:5000/research_paper')
             .then((res) => res.json())
             .then((data) => setResearchPaper(data));
     }, []);

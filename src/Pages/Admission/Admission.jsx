@@ -6,7 +6,7 @@ const Admission = () => {
     const [admission, setAdmission] = useState([]);
 
     useEffect(() => {
-        fetch('/college.json')
+        fetch('http://localhost:5000/collegeData')
             .then((res) => res.json())
             .then((data) => setAdmission(data));
     }, []);
@@ -44,7 +44,7 @@ const Admission = () => {
                                                     </span>
                                                 </p>
                                             </div>
-                                            <Link>
+                                            <Link to={`/admission/${seat._id}`}>
                                                 <button className='py-3 w-full mb-1 px-7 rounded-lg text-xl font-medium text-white bg-[#1c2746] hover:bg-[#0f0f5a]'>
                                                     Admission Now
                                                 </button>
