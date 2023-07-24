@@ -4,36 +4,42 @@ import { Rating, Star } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import moment from 'moment';
+import { toast } from 'react-toastify'; // Assuming react-toastify is used for notifications
 import BannerShare from '../../Shared/BannerShare/BannerShare';
 import { AuthContext } from '../../Providors/AuthProvider';
 import axios from 'axios';
 
 const ReviewForm = () => {
-    const { reviewData } = useParams()
-    const { user } = useContext(AuthContext)
+    const { reviewData } = useParams();
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const from = '/';
+    const [rating, setRating] = useState(reviewData?.rating || 0);
+    const [reviews, setReviews] = useState([]);
 
-    const [rating, setRating] = React.useState(0);
     const currentDate = moment().format('MMM DD, YYYY');
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = (data) => {
+        if (!user) {
+            // Handle the case where the user is not logged in
+            // You may show a message or redirect the user to a login page
+            return;
+        }
+
         const myReview = {
             ...data,
-            email: user?.email,
-            description: reviewData?.description,
-            author: reviewData?.author,
-            img: reviewData?.img,
-            ratings: reviewData?.ratings,
+            email: user.email,
+            description: reviewData?.description || '',
+            author: reviewData?.author || user.displayName,
+            img: reviewData?.img || user.photoURL,
+            rating: rating,
             date: reviewData?.date || currentDate,
         };
 
         axios.post("https://admission-camp-client.vercel.app/reviews", myReview)
             .then((response) => {
-                console.log(response.data);
-
                 setReviews(response.data);
                 const notify = () => toast("Wow so easy!");
                 navigate(from, { replace: true });
@@ -41,7 +47,6 @@ const ReviewForm = () => {
             })
             .catch((error) => {
                 console.error("Error:", error);
-
             });
     };
 
@@ -67,13 +72,15 @@ const ReviewForm = () => {
                                     className='max-w-[200px]'
                                     value={rating}
                                     onChange={setRating}
-                                    itemStyles={myStyles} />
+                                    itemStyles={myStyles}
+                                />
+
                             </div>
 
                             <div className='flex flex-col gap-4'>
                                 <div className='w-full mt-8'>
-                                    <textarea rows={5} id='review' placeholder='Write your review' {...register("comment", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
-                                    {errors.review && <span className='text-red'>This field is required</span>}
+                                    <textarea rows={5} id='review' placeholder='Write your review' {...register("description", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
+                                    {errors.description && <span className='text-red'>This field is required</span>}
                                 </div>
 
                                 <div className='w-full'>
