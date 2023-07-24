@@ -14,6 +14,7 @@ import MyCollege from "../Pages/MyCollege/MyCollege";
 import PrivetRoute from "./PrivetRoute";
 import Error from "../Pages/Error/Error";
 import SearchPage from "../Pages/SearchPage/SearchPage";
+import ReviewForm from "../Pages/ReviewForm/ReviewForm";
 
 
 
@@ -55,6 +56,13 @@ export const router = createBrowserRouter([
                 loader: () => fetch('https://admission-camp-client.vercel.app/collegeData')
 
             },
+            {
+                path: 'review_form',
+                element: <PrivetRoute><ReviewForm></ReviewForm></PrivetRoute>,
+                loader: () => fetch('https://admission-camp-client.vercel.app/reviews')
+            },
+
+
             {
                 path: 'viewDetails/:id',
                 element: <PrivetRoute><TopClgViewDEtails></TopClgViewDEtails></PrivetRoute>,

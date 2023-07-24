@@ -9,6 +9,7 @@ const Review = () => {
             .then((data) => setReviews(data));
     }, []);
 
+
     return (
         <section className='bg-gray-200 my-28 min-h-screen'>
 

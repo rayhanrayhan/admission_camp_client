@@ -49,7 +49,7 @@ const MyCollege = () => {
                                                     </span>
                                                 </p>
                                             </div>
-                                            <Link to=''>
+                                            <Link to='/review_form'>
                                                 <button className='py-3 w-full mb-1 px-7 rounded-lg text-xl font-medium text-white bg-[#1c2746] hover:bg-[#0f0f5a]'>
                                                     Review
                                                 </button>
