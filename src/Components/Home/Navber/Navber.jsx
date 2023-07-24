@@ -46,7 +46,7 @@ const Navber = () => {
             </li>
             <li>
                 <NavLink
-                    to="/college"
+                    to="college"
                     className={({ isActive }) =>
                         isActive
                             ? "block font-medium text-yellow-400 outline-white text-lg"
@@ -58,7 +58,7 @@ const Navber = () => {
             </li>
             <li>
                 <NavLink
-                    to="/admission"
+                    to="admission"
                     className={({ isActive }) =>
                         isActive
                             ? "block font-medium text-yellow-400 outline-white text-lg"
@@ -70,7 +70,7 @@ const Navber = () => {
             </li>
             <li>
                 <NavLink
-                    to="/mycollege"
+                    to="mycollege"
                     className={({ isActive }) =>
                         isActive
                             ? "block font-medium text-yellow-400 outline-white text-lg"

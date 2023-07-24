@@ -8,6 +8,9 @@ import College from "../Pages/College/College";
 import Admission from "../Pages/Admission/Admission";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import TopClgViewDEtails from "../Pages/TopClgViewDetails/TopClgViewDEtails";
+import AdmissionForm from "../Pages/AdmissionForm/AdmissionForm";
+import MyCollege from "../Pages/MyCollege/MyCollege";
 
 
 export const router = createBrowserRouter([
@@ -20,21 +23,36 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/college',
+                path: 'college',
                 element: <College></College>
             },
             {
-                path: '/admission',
+                path: 'admission',
                 element: <Admission></Admission>
             },
             {
-                path: '/Login',
+                path: 'Login',
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: 'mycollege',
+                element: <MyCollege></MyCollege>
+            },
+            {
+                path: 'register',
                 element: <Register></Register>
             },
+            {
+                path: 'viewDetails/:id',
+                element: <TopClgViewDEtails></TopClgViewDEtails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
+            },
+            {
+                path: 'admission/:id',
+                element: <AdmissionForm></AdmissionForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/collegeData/${params.id}`)
+            },
+
         ]
     },
 ]);

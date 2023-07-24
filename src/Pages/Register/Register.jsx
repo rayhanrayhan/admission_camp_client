@@ -29,6 +29,7 @@ const Register = () => {
 
                 updateUserProfile(name, photo)
                 console.log(user)
+                navigate(from, { replace: true })
             })
             .catch((error) => {
                 console.log(error);

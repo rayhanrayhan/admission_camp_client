@@ -2,9 +2,10 @@ import React from 'react';
 // Rating star
 import { Rating, Star } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { Link } from 'react-router-dom';
 
 const AllClgCards = ({ college }) => {
-    const { collegeImg, college_Name, ratings, admission_Process, events, research_Works, sports } = college;
+    const { collegeImg, college_Name, ratings, _id, admission_Process, events, research_Works, sports } = college;
 
     const myStyles = {
         itemShapes: Star,
@@ -66,7 +67,9 @@ const AllClgCards = ({ college }) => {
                 <img className="absolute inset-0 transform w-full -translate-y-4" src={collegeImg} style={{ filter: "grayscale(0)" }} />
                 <div className="flex flex-row justify-center relative pb-5 space-x-4 z-10">
 
-                    <button className="py-3 mb-1 px-7 rounded-lg text-xl font-medium text-white bg-[#73767e] hover:bg-[#0f0f5a]">View Details</button>
+                    <Link to={`/viewDetails/${_id}`}>
+                        <button className="py-3 mb-1 px-7 rounded-lg text-xl font-medium text-white bg-[#73767e] hover:bg-[#0f0f5a]">View Details</button>
+                    </Link>
                 </div>
             </div>
 
